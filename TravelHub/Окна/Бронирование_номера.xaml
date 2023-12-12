@@ -1,0 +1,65 @@
+﻿<Window x:Class="TravelHub.Бронирование_номера"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TravelHub"
+    mc:Ignorable="d" 
+      Height="800" Width="800"
+      ResizeMode="NoResize"
+      Loaded="Window_Loaded"
+      Title="Оформление брони">
+    <Grid Background="#FF4348AE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="124*"/>
+            <RowDefinition Height="247*"/>
+            <RowDefinition Height="199*"/>
+        </Grid.RowDefinitions>
+        <ListView HorizontalAlignment="Center" Height="732" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" Width="591" x:Name="BasketListView" Margin="202,29,0.043,0" BorderBrush="{x:Null}" Grid.RowSpan="3" Background="#FF4D0099">
+
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="DelMEnu" Header="Удалить из корзины" Click="DelMEnu_Click"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" MaxWidth="800"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="350" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock VerticalAlignment="Center" TextAlignment="Center" Width="390" 
+                        TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="26" Grid.Row="0" Text="{Binding Название_номера}"/>
+                        <TextBlock Grid.Row="2" Text="{Binding Цена, Mode=OneWay, StringFormat=Цена: \{0\}}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="Buy" Content="Забронировать&#xA;промежуток" FontSize="21" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="59" Margin="10,92.296,0,0" VerticalAlignment="Top" Width="171" Click="Buy_Click" Grid.Row="2" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF431BAC" BorderBrush="Black"/>
+        <Button x:Name="Back" Content="Назад" FontSize="21" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="38" Margin="10,221.296,0,0" VerticalAlignment="Top" Width="171" Click="Back_Click" Grid.Row="2" FontFamily="Comic Sans MS" Background="#FF431BAC" BorderBrush="Black"/>
+        <Button x:Name="Del" Content="Отменить&#xD;&#xA;бронирование" HorizontalContentAlignment="Center" FontSize="21" HorizontalAlignment="Left" Height="60" Margin="10,156.296,0,0" VerticalAlignment="Top" Width="171" Click="Del_Click" Grid.Row="2" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF431BAC" BorderBrush="Black"/>
+        <Label Content="Информация о &#xA;бронировании" FontSize="21" HorizontalAlignment="Left" Height="63" Margin="0,-5,0,0" VerticalAlignment="Top" Width="186" RenderTransformOrigin="0.518,0.119" FontWeight="Bold" Background="#FF4348AE" FontFamily="Comic Sans MS"/>
+        <Label x:Name="resultSum" Content="Итоговая сумма:&#xA;" FontSize="21" HorizontalAlignment="Left" Height="35" Margin="202,-5,0,0" VerticalAlignment="Top" Width="344" Background="#FF4348AE" FontFamily="Comic Sans MS"/>
+        <TextBlock x:Name="SurnameBl" TextWrapping="Wrap" FontSize="21" Margin="2,64.209,606.043,109.704" Grid.Row="1" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF4348AE"><Run Text="Ваш"/><Run Text="а фамилия"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="NameBl" Text="Ваше имя:" TextWrapping="Wrap" FontSize="21" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="187" Margin="0,158,0,0" Visibility="Visible" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF4348AE" Grid.RowSpan="2"/>
+        <TextBlock x:Name="PatronymicBl" TextWrapping="Wrap" FontSize="21" Margin="1,137.209,606.043,122.704" Grid.Row="1" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF4348AE"><Run Text="Ваше "/><Run Text="отчество"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="SurnameInput"  FontSize="21" Margin="1,97.209,0,0" TextWrapping="Wrap" BorderBrush="{x:Null}" Background="White" Grid.Row="1" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="186" FontFamily="Comic Sans MS"/>
+        <TextBox x:Name="PatronymicInput"  FontSize="21" Margin="1,171.209,0,0" TextWrapping="Wrap" BorderBrush="{x:Null}" Background="White" Grid.Row="1" Height="39" VerticalAlignment="Top" HorizontalAlignment="Left" Width="186" FontFamily="Comic Sans MS"/>
+        <TextBox x:Name="NameInput"  FontSize="21" TextWrapping="Wrap"  BorderBrush="{x:Null}"  Background="White" Margin="2,25.209,0,0" Grid.Row="1" Height="39" VerticalAlignment="Top" HorizontalAlignment="Left" Width="186" FontFamily="Comic Sans MS"/>
+        <Label x:Name="PointCh" Content="Отель:" FontSize="21" HorizontalAlignment="Left" Height="38" Margin="1,58,0,0" VerticalAlignment="Top" Width="186" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF4348AE"/>
+        <ComboBox FontSize="21" x:Name="Points" DisplayMemberPath="Название_отеля"  SelectedValuePath="ID_Отеля" Margin="0,96,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Height="57" VerticalAlignment="Top" HorizontalAlignment="Left" Width="186" FontFamily="Comic Sans MS" />
+        <TextBlock x:Name="PatronymicBl_Copy" TextWrapping="Wrap" FontSize="21" Margin="2,211.209,605.043,62.704" Grid.Row="1" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF4348AE"><Run Text="Ваша дата въезда"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="PatronymicBl_Copy1" TextWrapping="Wrap" FontSize="21" Margin="0,300.209,612.043,241.504" Grid.Row="1" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF4348AE" Grid.RowSpan="2"><Run Text="Ваша дата "/><Run Text="вы"/><Run Text="езда"/><Run Text=":"/></TextBlock>
+        <DatePicker Name="CheckInDatePicker" Margin="0,271.209,591.043,20.704" Grid.Row="1" />
+        <DatePicker Name="CheckOutDatePicker" Margin="1,27.296,592.043,209.504" Grid.Row="2" />
+    </Grid>
+</Window>

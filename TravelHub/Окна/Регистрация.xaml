@@ -1,0 +1,38 @@
+﻿<Window x:Class="TravelHub.Регистрация"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TravelHub"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="446.8" Width="573.3">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Изображения/Registration background.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FF4348AE" HorizontalAlignment="Left" Height="42" Margin="10,374,0,0" Stroke="Black" VerticalAlignment="Top" Width="542"/>
+        <Rectangle Fill="#FF4348AE" HorizontalAlignment="Left" Height="42" Margin="10,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="542"/>
+        <Button x:Name="Registration" Content="Зарегистрироваться" FontSize="16"  Height="30"  VerticalAlignment="Bottom" Click="Registration_Click" Margin="375,0,28.2,1.8" BorderBrush="Black" FontFamily="Comic Sans MS"/>
+        <Label Content="Код для создания &#xA;аккаунта&#xA;сотрудника" HorizontalAlignment="Left" Height="75" FontSize="16" Margin="626,295,-390.817,-49.443" VerticalAlignment="Top" Width="158" Visibility="Hidden"/>
+        <Button x:Name="BackButton" Content="Назад" FontSize="16" HorizontalAlignment="Left" Height="27"  VerticalAlignment="Bottom" Width="83" Click="BackButton_Click" Margin="19,0,0,1.8" BorderBrush="Black" FontFamily="Comic Sans MS"/>
+        <TextBox x:Name="loginInput" HorizontalAlignment="Left" Height="29" Margin="11,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168" BorderBrush="Black" FontFamily="Comic Sans MS"/>
+        <Label Content="Логин:" HorizontalAlignment="Left" Height="30" FontSize="16" VerticalAlignment="Top" Width="168" Margin="11,44,0,0" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Height="29" FontSize="16" Margin="373,192,0,0" VerticalAlignment="Top" Width="180" BorderBrush="Black" FontFamily="Comic Sans MS"/>
+        <Label Content="Пароль:" HorizontalAlignment="Left" Height="29" FontSize="16" Margin="375,163,0,0" VerticalAlignment="Top" Width="176" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+        <PasswordBox x:Name="password2" HorizontalAlignment="Left" FontSize="16" Height="29" Margin="373,250,0,0"  VerticalAlignment="Top" Width="180" BorderBrush="Black" FontFamily="Comic Sans MS" />
+        <Label Content="Подтвердите пароль:" HorizontalAlignment="Left" FontSize="16" Height="29" Margin="375,221,0,0" VerticalAlignment="Top" Width="176" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+        <TextBox x:Name="NameInput" HorizontalAlignment="Left" FontSize="16" Height="29" Margin="12,135,0,0"  VerticalAlignment="Top" Width="168" BorderBrush="Black" FontFamily="Comic Sans MS" />
+        <Label  Content="Имя:" HorizontalAlignment="Left" Height="29" FontSize="16" Margin="12,105,0,0" VerticalAlignment="Top" Width="168" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+        <TextBox x:Name="SurnameInput" HorizontalAlignment="Left" FontSize="16" Height="29" Margin="12,192,0,0"  VerticalAlignment="Top" Width="168" BorderBrush="Black" FontFamily="Comic Sans MS" />
+        <Label  Content="Фамилия:" HorizontalAlignment="Left" Height="29" FontSize="16" Margin="12,163,0,0" VerticalAlignment="Top" Width="168" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+        <TextBox x:Name="PatronymicInput" HorizontalAlignment="Left" FontSize="16" Height="29" Margin="12,250,0,0"  VerticalAlignment="Top" Width="168" BorderBrush="Black" FontFamily="Comic Sans MS" />
+        <Label  Content="Отчество:" HorizontalAlignment="Left" Height="29" FontSize="16" Margin="12,221,0,0" VerticalAlignment="Top" Width="168" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+        <Label Content="Регистрация" HorizontalAlignment="Center" FontSize="21" Height="41" Margin="204,1,212.2,374.8" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="151" RenderTransformOrigin="0.496,0.522" Background="{x:Null}" FontStyle="Italic" FontWeight="Bold"/>
+        <TextBox PreviewTextInput="PhoneNumber_PreviewTextInput" x:Name="PhoneNumber" HorizontalAlignment="Left" FontSize="16" Height="29" Margin="371,74,0,0"  VerticalAlignment="Top" Width="180" BorderBrush="Black" FontFamily="Comic Sans MS" />
+        <Label Content="Номер телефона:" HorizontalAlignment="Left" FontSize="16" Height="29" Margin="373,45,0,0" VerticalAlignment="Top" Width="176" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Application x:Class="TravelHub.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TravelHub"
+             StartupUri="Окна/Авторизация.xaml">
+</Application>
+<!--public partial class TravelHubEntities : DbContext
+    {
+        private static TravelHubEntities _context;
+        public TravelHubEntities()
+            : base("name=TravelHubEntities")
+        {
+        }
+        public static TravelHubEntities GetContext()
+        {
+            if (_context == null)
+            {
+                _context = new TravelHubEntities();
+            }
+            return _context;
+        }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            throw new UnintentionalCodeFirstException();
+        }-->
